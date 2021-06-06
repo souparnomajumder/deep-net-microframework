@@ -57,9 +57,9 @@ class RELU():
 
 class Perceptron():
 
-    def __init__(self, learningRate, activation):
+    def __init__(self, bias, learningRate, activation):
         self.weights = []
-        self.inputs = [random.random()] 
+        self.inputs = [bias] 
         self.learningRate = learningRate
         self.activation = activation
 
@@ -93,11 +93,11 @@ class Perceptron():
 class Layer():
     learningRate = float(0)
  
-    def __init__(self, units, activation):
+    def __init__(self, units, activation, bias = random.random()):
         self.perceptrons = []
 
         for index in range(units):
-            self.perceptrons.append(Perceptron(self.learningRate, activation))
+            self.perceptrons.append(Perceptron(bias, self.learningRate, activation))
 
     def input(self, inputs):
         for perceptron in self.perceptrons:

@@ -117,7 +117,7 @@ class Layer():
         for perceptron, error in zip(self.perceptrons, errors):
             deltas.append(perceptron.delta(error))
             weights.append(perceptron.weights)
-            perceptron.backpropagate(deltas[len(deltas) - 1])
+            perceptron.backpropagate(deltas[-1])
 
         return np.dot(deltas, np.vstack(weights))
 

@@ -73,10 +73,9 @@ class Perceptron():
         return self.activation.derivative(self.regression()) * error
 
     def input(self, inputs):
-        bias = self.inputs[len(self.inputs) - 1]
-        self.inputs = inputs + [bias]
+        self.inputs = inputs + [self.inputs[-1]]
 
-        if len(self.weights) > 1:
+        if len(self.weights):
             return
 
         for index in range(len(self.inputs)):

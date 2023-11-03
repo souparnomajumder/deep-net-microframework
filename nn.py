@@ -78,8 +78,7 @@ class Perceptron():
         if len(self.weights):
             return
 
-        for index in range(len(self.inputs)):
-            self.weights.append(random.random())
+        self.weights = [random.random()]*len(self.inputs)
 
     def output(self):
         return self.activation.output(self.regression())
@@ -93,10 +92,7 @@ class Layer():
     learningRate = float(0)
  
     def __init__(self, units, activation, bias = random.random()):
-        self.perceptrons = []
-
-        for index in range(units):
-            self.perceptrons.append(Perceptron(bias, self.learningRate, activation))
+        self.perceptrons = [Perceptron(bias, self.learningRate, activation)]*units
 
     def input(self, inputs):
         for perceptron in self.perceptrons:

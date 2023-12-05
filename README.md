@@ -1,6 +1,6 @@
 # Neural Network Implementation
 
-This repository contains Python code for a simple neural network implementation along with a `playground.ipnb` notebook, which is a Python migration of the TensorFlow Playground.
+This repository contains Python code for a simple neural network implementation `Neural_Network.ipnb` along with a `playground.ipnb` notebook, which is a Python migration of the TensorFlow Playground.
 
 ## Files
 
